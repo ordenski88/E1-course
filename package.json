@@ -1,0 +1,24 @@
+{
+  "name": "sandbox-ai-test-automation",
+  "version": "1.0.0",
+  "description": "AI-accelerated test automation scaffold for a sandbox app using Playwright.",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf test-results html-report playwright-report",
+    "install:browsers": "npx playwright install chromium",
+    "start": "npx http-server ./src/app -p 3000 -c-1",
+    "test:run": "npx playwright test --output=test-results",
+    "test": "npx start-server-and-test start http://localhost:3000 test:run",
+    "test:report": "npx playwright show-report html-report",
+    "test:ci": "npm run clean && npm run install:browsers && npm test",
+    "format": "prettier --write '**/*.{md,ts,js,json}'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.0.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.0.0",
+    "start-server-and-test": "^2.0.0",
+    "typescript": "^5.7.0"
+  }
+}

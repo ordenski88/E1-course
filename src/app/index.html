@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandbox Test App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="panel" id="login-panel">
+      <h1>Sandbox App Login</h1>
+      <form id="login-form" aria-label="Login form" novalidate>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" data-testid="login-email" placeholder="admin@example.com" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" data-testid="login-password" placeholder="Password123" required />
+
+        <div id="login-error" class="message error" role="alert" aria-live="polite"></div>
+        <button type="submit" data-testid="login-submit">Sign in</button>
+      </form>
+    </section>
+
+    <section class="panel hidden" id="dashboard-panel">
+      <div class="dashboard-header">
+        <h1>Test Management Dashboard</h1>
+        <p data-testid="dashboard-welcome">Welcome, admin@example.com</p>
+      </div>
+
+      <div class="form-card">
+        <h2>Create New Test Case</h2>
+        <form id="test-case-form" aria-label="New test case form" novalidate>
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" data-testid="case-title" required />
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" data-testid="case-description" required></textarea>
+
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority" data-testid="case-priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+          </select>
+
+          <div id="case-error" class="message error" role="alert" aria-live="polite"></div>
+          <div id="case-success" class="message success" role="status" aria-live="polite"></div>
+          <button type="submit" data-testid="case-submit">Save Test Case</button>
+        </form>
+      </div>
+
+      <section class="list-card">
+        <h2>Saved Test Cases</h2>
+        <div id="test-case-list" data-testid="case-list">
+          <p class="empty-state">No test cases created yet.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

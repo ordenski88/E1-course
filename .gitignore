@@ -1,0 +1,5 @@
+node_modules/
+html-report/
+test-results/
+**/*.log
+.DS_Store
