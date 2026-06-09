@@ -1,0 +1,9 @@
+{
+  "modelcontextprotocol.servers": {
+    "playwright": {
+      "command": "node",
+      "args": ["/Users/ordenski/Documents/E1 course/mcp-playwright-server/dist/index.js"],
+      "disabled": false
+    }
+  }
+}
